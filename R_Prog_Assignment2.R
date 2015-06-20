@@ -11,6 +11,10 @@
 # 
 # For this assignment, assume that the matrix supplied is always invertible.
 
+
+                  ## Solution Follows below ##
+#makeCacheMatrix function creats a matrix object and caches its inverse.
+
 makeCacheMatrix <- function(x = matrix()){
   
   i <- NULL
@@ -26,9 +30,10 @@ makeCacheMatrix <- function(x = matrix()){
        getinverse = getinverse)
 }
 
+#cacheSolve function checks if an inverse for given matrix is already available in above function or not(if the matrix is not changed). if an inverse cache is already available it returns the inverse from cached data otherwise it calculates the inverse matrix.
 cacheSolve <- function(x = matrix()){
   f<-makeCacheMatrix(y)
-  if(sum(x - f$get())== 0) i <- f$getinverse() else i <- NULL;
+  if(sum(x - f$get())== 0) i <- f$getinverse() else i <- NULL;#validating if the matrix is changed or not.
   if(!is.null(i)) {
     message("getting cached data")
     return(i)
